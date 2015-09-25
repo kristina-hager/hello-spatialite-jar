@@ -20,17 +20,18 @@ android {
 }
 
 repositories {
-//    maven {
-//        url  "http://dl.bintray.com/kristina-hager/kh-examples"
-//    }
-    jcenter()
-    flatDir {
-        dirs '../../repos'
+    maven {
+        url  "http://dl.bintray.com/kristina-hager/kh-examples"
     }
+    jcenter()
+//    flatDir {
+//        dirs '../../repos'
+//    }
 }
 
 dependencies {
-    compile (name: 'spatialite-android', ext:'jar') //working for local deploy
+    compile group: 'com.example', name: 'spatialite-android', version: '1.0.0'
+//    compile (name: 'spatialite-android', ext:'jar') //working for local deploy
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
 }
